@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace RPS_Game
 {
-    public partial class Game : Form
+    public partial class GameForm : Form
     {
-        public Game()
+        public GameForm()
         {
             InitializeComponent();
         }
