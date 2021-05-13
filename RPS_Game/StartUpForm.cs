@@ -29,12 +29,6 @@ namespace RPS_Game
             }
         }
 
-        private void ClickStartButton(object sender, EventArgs e)
-        {
-            if(startButton.Enabled)
-            {
-                GameController.StartGame();
-            }    
-        }
+        
     }
 }

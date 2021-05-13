@@ -28,10 +28,7 @@ namespace RPS_Game
 
         public GameChoices PlayerOneChoice { get; set; }
         public GameChoices PlayerTwoChoices { get; set; }
-
-        private static 
         
-
         /// <summary>
         /// StartGame asks for the players name and how many
         /// rounds of rock, paper, scissors they want to play.

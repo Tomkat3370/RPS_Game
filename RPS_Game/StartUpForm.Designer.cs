@@ -29,6 +29,7 @@ namespace RPS_Game
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartUpForm));
             this.startButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.playerOneNameTextBox = new System.Windows.Forms.TextBox();
@@ -37,14 +38,15 @@ namespace RPS_Game
             this.computerCheckBox = new System.Windows.Forms.CheckBox();
             this.playerTwoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gameForm = new RPS_Game.GameForm();
             this.roundsGroupBox = new System.Windows.Forms.GroupBox();
             this.roundsNnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.roundsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundsNnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // startButton
@@ -56,7 +58,8 @@ namespace RPS_Game
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = false;
-            this.startButton.Click += new System.EventHandler(this.ClickStartButton);
+
+
             // 
             // groupBox1
             // 
@@ -126,14 +129,6 @@ namespace RPS_Game
             this.label1.TabIndex = 3;
             this.label1.Text = "Name:";
             // 
-            // gameForm
-            // 
-            this.gameForm.ClientSize = new System.Drawing.Size(1041, 727);
-            this.gameForm.Location = new System.Drawing.Point(228, 228);
-            this.gameForm.Name = "gameForm";
-            this.gameForm.Text = "Game";
-            this.gameForm.Visible = false;
-            // 
             // roundsGroupBox
             // 
             this.roundsGroupBox.BackColor = System.Drawing.Color.DodgerBlue;
@@ -180,6 +175,15 @@ namespace RPS_Game
             this.textBox1.Text = "Rock, Paper, Scissors!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(695, 320);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(257, 222);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // StartUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
@@ -191,6 +195,7 @@ namespace RPS_Game
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.startButton);
+            this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "StartUpForm";
             this.Text = "StartUpForm";
@@ -200,6 +205,7 @@ namespace RPS_Game
             this.groupBox2.PerformLayout();
             this.roundsGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roundsNnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,9 +221,9 @@ namespace RPS_Game
         private System.Windows.Forms.CheckBox computerCheckBox;
         private System.Windows.Forms.TextBox playerTwoTextBox;
         private System.Windows.Forms.Label label1;
-        private GameForm gameForm;
         private System.Windows.Forms.GroupBox roundsGroupBox;
         private System.Windows.Forms.NumericUpDown roundsNnumericUpDown;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
