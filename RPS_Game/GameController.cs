@@ -28,6 +28,8 @@ namespace RPS_Game
 
         public GameChoices PlayerOneChoice { get; set; }
         public GameChoices PlayerTwoChoices { get; set; }
+
+        private static 
         
 
         /// <summary>
@@ -36,7 +38,7 @@ namespace RPS_Game
         /// </summary>
         public void StartGame()
         {
-
+            
         }
 
         public void MakeChoice()
