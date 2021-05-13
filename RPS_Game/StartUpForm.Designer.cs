@@ -50,6 +50,8 @@ namespace RPS_Game
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = false;
+            var gameForm = new GameForm();
+            gameForm.Show();
             // 
             // groupBox1
             // 
