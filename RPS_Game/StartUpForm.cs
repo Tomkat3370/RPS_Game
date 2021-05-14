@@ -65,5 +65,10 @@ namespace RPS_Game
             }
            
         }
+
+        private void playerOneTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -77,15 +77,16 @@ namespace RPS_Game
             // 
             this.playerOneTextBox.Location = new System.Drawing.Point(149, 69);
             this.playerOneTextBox.Name = "playerOneTextBox";
-            this.playerOneTextBox.Size = new System.Drawing.Size(307, 56);
+            this.playerOneTextBox.Size = new System.Drawing.Size(480, 60);
             this.playerOneTextBox.TabIndex = 4;
+            this.playerOneTextBox.TextChanged += new System.EventHandler(this.playerOneTextBox_TextChanged);
             // 
             // playerOneLabel
             // 
             this.playerOneLabel.AutoSize = true;
             this.playerOneLabel.Location = new System.Drawing.Point(6, 77);
             this.playerOneLabel.Name = "playerOneLabel";
-            this.playerOneLabel.Size = new System.Drawing.Size(137, 48);
+            this.playerOneLabel.Size = new System.Drawing.Size(148, 51);
             this.playerOneLabel.TabIndex = 3;
             this.playerOneLabel.Text = "Name:";
             // 
@@ -107,7 +108,7 @@ namespace RPS_Game
             this.computerCheckBox.AutoSize = true;
             this.computerCheckBox.Location = new System.Drawing.Point(149, 147);
             this.computerCheckBox.Name = "computerCheckBox";
-            this.computerCheckBox.Size = new System.Drawing.Size(258, 52);
+            this.computerCheckBox.Size = new System.Drawing.Size(275, 56);
             this.computerCheckBox.TabIndex = 5;
             this.computerCheckBox.Text = "is Computer";
             this.computerCheckBox.UseVisualStyleBackColor = true;
@@ -117,7 +118,7 @@ namespace RPS_Game
             // 
             this.playerTwoTextBox.Location = new System.Drawing.Point(149, 69);
             this.playerTwoTextBox.Name = "playerTwoTextBox";
-            this.playerTwoTextBox.Size = new System.Drawing.Size(307, 56);
+            this.playerTwoTextBox.Size = new System.Drawing.Size(480, 60);
             this.playerTwoTextBox.TabIndex = 4;
             // 
             // label1
@@ -125,7 +126,7 @@ namespace RPS_Game
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 48);
+            this.label1.Size = new System.Drawing.Size(148, 51);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name:";
             // 
@@ -154,7 +155,7 @@ namespace RPS_Game
             0,
             0});
             this.roundsNumericUpDown.Name = "roundsNumericUpDown";
-            this.roundsNumericUpDown.Size = new System.Drawing.Size(78, 56);
+            this.roundsNumericUpDown.Size = new System.Drawing.Size(98, 48);
             this.roundsNumericUpDown.TabIndex = 0;
             this.roundsNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.roundsNumericUpDown.Value = new decimal(new int[] {
@@ -170,7 +171,7 @@ namespace RPS_Game
             this.textBox1.ForeColor = System.Drawing.Color.Maroon;
             this.textBox1.Location = new System.Drawing.Point(33, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(935, 123);
+            this.textBox1.Size = new System.Drawing.Size(935, 104);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "Rock, Paper, Scissors!";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -191,15 +192,15 @@ namespace RPS_Game
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
             this.errorLabel.Location = new System.Drawing.Point(600, 577);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 48);
+            this.errorLabel.Size = new System.Drawing.Size(0, 41);
             this.errorLabel.TabIndex = 8;
             // 
             // StartUpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.ClientSize = new System.Drawing.Size(980, 674);
+            this.ClientSize = new System.Drawing.Size(1227, 844);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.roundsGroupBox);
