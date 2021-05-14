@@ -10,6 +10,8 @@ namespace RPS_Game
 {
     public partial class StartUpForm : Form
     {
+        public const string ComputerName = "Computer";
+
         private GameForm gameForm;
         private GameController gameController;
 
@@ -25,7 +27,7 @@ namespace RPS_Game
         {
             if (computerCheckBox.Checked)
             {
-                playerTwoTextBox.Text = "Computer";
+                playerTwoTextBox.Text = ComputerName;
                 playerTwoTextBox.ReadOnly = true;
             }
             else
@@ -37,7 +39,19 @@ namespace RPS_Game
 
         private void StartGame(object sender, EventArgs e)
         {
-            
+            gameController.PlayerOneName = playerOneTextBox.Text;
+            gameController.PlayerTwoName = playerTwoTextBox.Text;
+
+            if (gameController.PlayerTwoName == ComputerName)
+            {
+                gameController.VersusComputer = true;
+            }
+            else gameController.VersusComputer = false;
+
+            gameController.Rounds = (int)roundsNumericUpDown.Value;
+
+            gameForm.Show();
+            this.Hide();
         }
     }
 }

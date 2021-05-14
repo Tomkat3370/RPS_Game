@@ -32,20 +32,20 @@ namespace RPS_Game
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartUpForm));
             this.startButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.playerOneNameTextBox = new System.Windows.Forms.TextBox();
+            this.playerOneTextBox = new System.Windows.Forms.TextBox();
             this.playerOneLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.computerCheckBox = new System.Windows.Forms.CheckBox();
             this.playerTwoTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.roundsGroupBox = new System.Windows.Forms.GroupBox();
-            this.roundsNnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.roundsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.roundsGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.roundsNnumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundsNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@ namespace RPS_Game
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox1.Controls.Add(this.playerOneNameTextBox);
+            this.groupBox1.Controls.Add(this.playerOneTextBox);
             this.groupBox1.Controls.Add(this.playerOneLabel);
             this.groupBox1.Location = new System.Drawing.Point(43, 217);
             this.groupBox1.Name = "groupBox1";
@@ -72,12 +72,12 @@ namespace RPS_Game
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Player One:";
             // 
-            // playerOneNameTextBox
+            // playerOneTextBox
             // 
-            this.playerOneNameTextBox.Location = new System.Drawing.Point(149, 69);
-            this.playerOneNameTextBox.Name = "playerOneNameTextBox";
-            this.playerOneNameTextBox.Size = new System.Drawing.Size(307, 56);
-            this.playerOneNameTextBox.TabIndex = 4;
+            this.playerOneTextBox.Location = new System.Drawing.Point(149, 69);
+            this.playerOneTextBox.Name = "playerOneTextBox";
+            this.playerOneTextBox.Size = new System.Drawing.Size(307, 56);
+            this.playerOneTextBox.TabIndex = 4;
             // 
             // playerOneLabel
             // 
@@ -131,7 +131,7 @@ namespace RPS_Game
             // roundsGroupBox
             // 
             this.roundsGroupBox.BackColor = System.Drawing.Color.DodgerBlue;
-            this.roundsGroupBox.Controls.Add(this.roundsNnumericUpDown);
+            this.roundsGroupBox.Controls.Add(this.roundsNumericUpDown);
             this.roundsGroupBox.Location = new System.Drawing.Point(688, 217);
             this.roundsGroupBox.Name = "roundsGroupBox";
             this.roundsGroupBox.Size = new System.Drawing.Size(263, 85);
@@ -139,24 +139,24 @@ namespace RPS_Game
             this.roundsGroupBox.TabStop = false;
             this.roundsGroupBox.Text = "Rounds:";
             // 
-            // roundsNnumericUpDown
+            // roundsNumericUpDown
             // 
-            this.roundsNnumericUpDown.Location = new System.Drawing.Point(179, 11);
-            this.roundsNnumericUpDown.Maximum = new decimal(new int[] {
+            this.roundsNumericUpDown.Location = new System.Drawing.Point(179, 11);
+            this.roundsNumericUpDown.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.roundsNnumericUpDown.Minimum = new decimal(new int[] {
+            this.roundsNumericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.roundsNnumericUpDown.Name = "roundsNnumericUpDown";
-            this.roundsNnumericUpDown.Size = new System.Drawing.Size(78, 56);
-            this.roundsNnumericUpDown.TabIndex = 0;
-            this.roundsNnumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.roundsNnumericUpDown.Value = new decimal(new int[] {
+            this.roundsNumericUpDown.Name = "roundsNumericUpDown";
+            this.roundsNumericUpDown.Size = new System.Drawing.Size(78, 56);
+            this.roundsNumericUpDown.TabIndex = 0;
+            this.roundsNumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.roundsNumericUpDown.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -203,7 +203,7 @@ namespace RPS_Game
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.roundsGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.roundsNnumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundsNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -214,14 +214,14 @@ namespace RPS_Game
 
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox playerOneNameTextBox;
+        private System.Windows.Forms.TextBox playerOneTextBox;
         private System.Windows.Forms.Label playerOneLabel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox computerCheckBox;
         private System.Windows.Forms.TextBox playerTwoTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox roundsGroupBox;
-        private System.Windows.Forms.NumericUpDown roundsNnumericUpDown;
+        private System.Windows.Forms.NumericUpDown roundsNumericUpDown;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

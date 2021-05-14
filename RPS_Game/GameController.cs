@@ -26,6 +26,8 @@ namespace RPS_Game
         public string WinnersName { get; set; }
         public int CurrentRound { get; set; }
 
+        public bool VersusComputer { get; set; }
+
         public GameChoices PlayerOneChoice { get; set; }
         public GameChoices PlayerTwoChoices { get; set; }
         
