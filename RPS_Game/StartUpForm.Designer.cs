@@ -42,6 +42,7 @@ namespace RPS_Game
             this.roundsNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.roundsGroupBox.SuspendLayout();
@@ -183,12 +184,23 @@ namespace RPS_Game
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.BackColor = System.Drawing.Color.Black;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(600, 577);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 48);
+            this.errorLabel.TabIndex = 8;
+            // 
             // StartUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.ClientSize = new System.Drawing.Size(980, 674);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.roundsGroupBox);
             this.Controls.Add(this.groupBox2);
@@ -224,5 +236,6 @@ namespace RPS_Game
         private System.Windows.Forms.NumericUpDown roundsNumericUpDown;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label errorLabel;
     }
 }

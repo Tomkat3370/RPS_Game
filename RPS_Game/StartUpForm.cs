@@ -39,19 +39,28 @@ namespace RPS_Game
 
         private void StartGame(object sender, EventArgs e)
         {
-            gameController.PlayerOneName = playerOneTextBox.Text;
-            gameController.PlayerTwoName = playerTwoTextBox.Text;
-
-            if (gameController.PlayerTwoName == ComputerName)
+            if(playerOneTextBox.Text.Length >= 3 && 
+                playerTwoTextBox.Text.Length >=3)
             {
-                gameController.VersusComputer = true;
+                gameController.PlayerOneName = playerOneTextBox.Text;
+                gameController.PlayerTwoName = playerTwoTextBox.Text;
+
+                if (gameController.PlayerTwoName == ComputerName)
+                {
+                    gameController.VersusComputer = true;
+                }
+                else gameController.VersusComputer = false;
+
+                gameController.Rounds = (int)roundsNumericUpDown.Value;
+
+                gameForm.Show();
+                this.Hide();
             }
-            else gameController.VersusComputer = false;
-
-            gameController.Rounds = (int)roundsNumericUpDown.Value;
-
-            gameForm.Show();
-            this.Hide();
+            else
+            {
+                errorLabel.Text = "Please Enter Your Name";
+            }
+           
         }
     }
 }
