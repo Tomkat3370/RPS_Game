@@ -79,7 +79,7 @@ namespace RPS_Game
             this.playerOneTextBox.Name = "playerOneTextBox";
             this.playerOneTextBox.Size = new System.Drawing.Size(480, 60);
             this.playerOneTextBox.TabIndex = 4;
-            this.playerOneTextBox.TextChanged += new System.EventHandler(this.playerOneTextBox_TextChanged);
+           
             // 
             // playerOneLabel
             // 
