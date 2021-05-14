@@ -29,7 +29,7 @@ namespace RPS_Game
         public bool VersusComputer { get; set; }
 
         public GameChoices PlayerOneChoice { get; set; }
-        public GameChoices PlayerTwoChoices { get; set; }
+        public GameChoices PlayerTwoChoice { get; set; }
         
         /// <summary>
         /// StartGame asks for the players name and how many
