@@ -57,7 +57,7 @@ namespace RPS_Game
 
                 gameForm = new GameForm(gameController);
                 gameForm.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {
