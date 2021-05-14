@@ -18,9 +18,17 @@ namespace RPS_Game
         public GameForm(GameController controller)
         {
             InitializeComponent();
+
             groupBoxOne.Text = controller.PlayerOneName;
             groupBoxTwo.Text = controller.PlayerTwoName;
             this.controller = controller;
+
+            if(controller.VersusComputer)
+            {
+                rockRadioButtonTwo.Enabled = false;
+                paperRadioButtonTwo.Enabled = false;
+                scissorsRadioButtonTwo.Enabled = false;
+            }
         }
 
         public void RunGame()

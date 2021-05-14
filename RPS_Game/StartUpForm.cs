@@ -19,7 +19,7 @@ namespace RPS_Game
         {
             InitializeComponent();
             gameController = new GameController();
-            gameForm = new GameForm(gameController);
+            
             
         }
 
@@ -39,7 +39,9 @@ namespace RPS_Game
 
         private void StartGame(object sender, EventArgs e)
         {
-            if(playerOneTextBox.Text.Length >= 3 && 
+            
+
+            if (playerOneTextBox.Text.Length >= 3 && 
                 playerTwoTextBox.Text.Length >=3)
             {
                 gameController.PlayerOneName = playerOneTextBox.Text;
@@ -53,8 +55,9 @@ namespace RPS_Game
 
                 gameController.Rounds = (int)roundsNumericUpDown.Value;
 
+                gameForm = new GameForm(gameController);
                 gameForm.Show();
-                this.Hide();
+                this.Close();
             }
             else
             {
