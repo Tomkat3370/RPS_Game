@@ -10,9 +10,15 @@ namespace RPS_Game
 {
     public partial class StartUpForm : Form
     {
+        private GameForm gameForm;
+        private GameController gameController;
+
         public StartUpForm()
         {
             InitializeComponent();
+            gameController = new GameController();
+            gameForm = new GameForm(gameController);
+            
         }
 
         private void ChangeName(object sender, EventArgs e)
@@ -29,6 +35,9 @@ namespace RPS_Game
             }
         }
 
-        
+        private void StartGame(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

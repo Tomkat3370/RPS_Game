@@ -10,12 +10,20 @@ namespace RPS_Game
 {
     public partial class GameForm : Form
     {
-        public GameForm()
+        private GameController controller;
+
+        public GameForm(GameController controller)
         {
             InitializeComponent();
+            this.controller = controller;
         }
 
-        private void closeButton_Click(object sender, EventArgs e)
+        public void RunGame()
+        {
+
+        }
+
+        private void CloseForm(object sender, EventArgs e)
         {
             Close();
         }
