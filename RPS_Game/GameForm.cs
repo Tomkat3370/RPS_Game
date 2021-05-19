@@ -67,7 +67,6 @@ namespace RPS_Game
                 controller.PlayerOneChoice = GameChoices.Scissors;
                 Bitmap scissors = Properties.Resources.Scissors;
                 pictureBox1.Image = scissors;
-
             }
 
 
@@ -78,17 +77,20 @@ namespace RPS_Game
             if (rockRadioButtonTwo.Checked)
             {
                 controller.PlayerTwoChoice = GameChoices.Rock;
-                pictureBox2.Image = Image.FromFile("Images/stone.jpg"); 
+                Bitmap stone = Properties.Resources.Stone;
+                pictureBox2.Image = stone;
             }
             else if (paperRadioButtonTwo.Checked)
             {
                 controller.PlayerTwoChoice = GameChoices.Paper;
-                pictureBox2.Image = Image.FromFile("Images/paper");
+                Bitmap paper = Properties.Resources.Paper;
+                pictureBox2.Image = paper;
             }
             else if (scissorsRadioButtonTwo.Checked)
             {
                 controller.PlayerTwoChoice = GameChoices.Scissors;
-                pictureBox2.Image = Image.FromFile("Images/scissors");
+                Bitmap scissors = Properties.Resources.Scissors;
+                pictureBox2.Image = scissors;
             }
         }
     }
