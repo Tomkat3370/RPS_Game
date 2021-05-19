@@ -29,40 +29,28 @@ namespace RPS_Game
         /// </summary>
         private void InitializeComponent()
         {
-            this.playButton = new System.Windows.Forms.Button();
             this.groupBoxOne = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.scissorsRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.groupBoxTwo = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.scissorsRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.playButton = new System.Windows.Forms.Button();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.groupBoxOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxTwo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // playButton
-            // 
-            this.playButton.Location = new System.Drawing.Point(59, 476);
-            this.playButton.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(181, 64);
-            this.playButton.TabIndex = 1;
-            this.playButton.Text = "Play";
-            this.playButton.UseVisualStyleBackColor = true;
-            this.playButton.Click += new System.EventHandler(this.PlayChoiceOne);
-            // 
             // groupBoxOne
             // 
             this.groupBoxOne.Controls.Add(this.pictureBox1);
             this.groupBoxOne.Controls.Add(this.scissorsRadioButtonOne);
-            this.groupBoxOne.Controls.Add(this.playButton);
             this.groupBoxOne.Controls.Add(this.paperRadioButtonOne);
             this.groupBoxOne.Controls.Add(this.rockRadioButtonOne);
             this.groupBoxOne.Location = new System.Drawing.Point(55, 55);
@@ -89,7 +77,6 @@ namespace RPS_Game
             this.scissorsRadioButtonOne.Name = "scissorsRadioButtonOne";
             this.scissorsRadioButtonOne.Size = new System.Drawing.Size(184, 52);
             this.scissorsRadioButtonOne.TabIndex = 2;
-            this.scissorsRadioButtonOne.TabStop = true;
             this.scissorsRadioButtonOne.Text = "Scissors";
             this.scissorsRadioButtonOne.UseVisualStyleBackColor = true;
             this.scissorsRadioButtonOne.CheckedChanged += new System.EventHandler(this.SetPlayerOneChoice);
@@ -101,7 +88,6 @@ namespace RPS_Game
             this.paperRadioButtonOne.Name = "paperRadioButtonOne";
             this.paperRadioButtonOne.Size = new System.Drawing.Size(145, 52);
             this.paperRadioButtonOne.TabIndex = 1;
-            this.paperRadioButtonOne.TabStop = true;
             this.paperRadioButtonOne.Text = "Paper";
             this.paperRadioButtonOne.UseVisualStyleBackColor = true;
             this.paperRadioButtonOne.CheckedChanged += new System.EventHandler(this.SetPlayerOneChoice);
@@ -113,14 +99,12 @@ namespace RPS_Game
             this.rockRadioButtonOne.Name = "rockRadioButtonOne";
             this.rockRadioButtonOne.Size = new System.Drawing.Size(130, 52);
             this.rockRadioButtonOne.TabIndex = 0;
-            this.rockRadioButtonOne.TabStop = true;
             this.rockRadioButtonOne.Text = "Rock";
             this.rockRadioButtonOne.UseVisualStyleBackColor = true;
             this.rockRadioButtonOne.CheckedChanged += new System.EventHandler(this.SetPlayerOneChoice);
             // 
             // groupBoxTwo
             // 
-            this.groupBoxTwo.Controls.Add(this.button1);
             this.groupBoxTwo.Controls.Add(this.scissorsRadioButtonTwo);
             this.groupBoxTwo.Controls.Add(this.paperRadioButtonTwo);
             this.groupBoxTwo.Controls.Add(this.rockRadioButtonTwo);
@@ -131,16 +115,6 @@ namespace RPS_Game
             this.groupBoxTwo.TabIndex = 5;
             this.groupBoxTwo.TabStop = false;
             this.groupBoxTwo.Text = "NameTwo";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(78, 471);
-            this.button1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 64);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // scissorsRadioButtonTwo
             // 
@@ -187,11 +161,32 @@ namespace RPS_Game
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
+            // playButton
+            // 
+            this.playButton.Location = new System.Drawing.Point(434, 535);
+            this.playButton.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(181, 64);
+            this.playButton.TabIndex = 6;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.SelectPlayButton);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Location = new System.Drawing.Point(450, 364);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 48);
+            this.errorLabel.TabIndex = 7;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 683);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.groupBoxTwo);
             this.Controls.Add(this.groupBoxOne);
             this.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -204,11 +199,11 @@ namespace RPS_Game
             this.groupBoxTwo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.GroupBox groupBoxOne;
         private System.Windows.Forms.GroupBox groupBoxTwo;
         private System.Windows.Forms.RadioButton scissorsRadioButtonOne;
@@ -219,6 +214,7 @@ namespace RPS_Game
         private System.Windows.Forms.RadioButton scissorsRadioButtonTwo;
         private System.Windows.Forms.RadioButton paperRadioButtonTwo;
         private System.Windows.Forms.RadioButton rockRadioButtonTwo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
