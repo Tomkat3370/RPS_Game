@@ -53,17 +53,21 @@ namespace RPS_Game
             if (rockRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Rock;
-                pictureBox1.Image = Image.FromFile("Images/Stone.jpg");
+                Bitmap stone = Properties.Resources.Stone;
+                pictureBox1.Image = stone;
             }
             else if (paperRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Paper;
-                pictureBox1.Image = Image.FromFile("Images/paper.jpg");
+                Bitmap paper = Properties.Resources.Paper;
+                pictureBox1.Image = paper;
             }
             else if (scissorsRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Scissors;
-                pictureBox1.Image = Image.FromFile("Images/scissors.jpg");
+                Bitmap scissors = Properties.Resources.Scissors;
+                pictureBox1.Image = scissors;
+
             }
 
 

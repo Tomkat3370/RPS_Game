@@ -87,7 +87,7 @@ namespace RPS_Game
             this.scissorsRadioButtonOne.AutoSize = true;
             this.scissorsRadioButtonOne.Location = new System.Drawing.Point(29, 422);
             this.scissorsRadioButtonOne.Name = "scissorsRadioButtonOne";
-            this.scissorsRadioButtonOne.Size = new System.Drawing.Size(157, 45);
+            this.scissorsRadioButtonOne.Size = new System.Drawing.Size(184, 52);
             this.scissorsRadioButtonOne.TabIndex = 2;
             this.scissorsRadioButtonOne.TabStop = true;
             this.scissorsRadioButtonOne.Text = "Scissors";
@@ -99,7 +99,7 @@ namespace RPS_Game
             this.paperRadioButtonOne.AutoSize = true;
             this.paperRadioButtonOne.Location = new System.Drawing.Point(29, 364);
             this.paperRadioButtonOne.Name = "paperRadioButtonOne";
-            this.paperRadioButtonOne.Size = new System.Drawing.Size(125, 45);
+            this.paperRadioButtonOne.Size = new System.Drawing.Size(145, 52);
             this.paperRadioButtonOne.TabIndex = 1;
             this.paperRadioButtonOne.TabStop = true;
             this.paperRadioButtonOne.Text = "Paper";
@@ -111,7 +111,7 @@ namespace RPS_Game
             this.rockRadioButtonOne.AutoSize = true;
             this.rockRadioButtonOne.Location = new System.Drawing.Point(29, 305);
             this.rockRadioButtonOne.Name = "rockRadioButtonOne";
-            this.rockRadioButtonOne.Size = new System.Drawing.Size(111, 45);
+            this.rockRadioButtonOne.Size = new System.Drawing.Size(130, 52);
             this.rockRadioButtonOne.TabIndex = 0;
             this.rockRadioButtonOne.TabStop = true;
             this.rockRadioButtonOne.Text = "Rock";
@@ -147,7 +147,7 @@ namespace RPS_Game
             this.scissorsRadioButtonTwo.AutoSize = true;
             this.scissorsRadioButtonTwo.Location = new System.Drawing.Point(39, 422);
             this.scissorsRadioButtonTwo.Name = "scissorsRadioButtonTwo";
-            this.scissorsRadioButtonTwo.Size = new System.Drawing.Size(157, 45);
+            this.scissorsRadioButtonTwo.Size = new System.Drawing.Size(184, 52);
             this.scissorsRadioButtonTwo.TabIndex = 6;
             this.scissorsRadioButtonTwo.TabStop = true;
             this.scissorsRadioButtonTwo.Text = "Scissors";
@@ -159,7 +159,7 @@ namespace RPS_Game
             this.paperRadioButtonTwo.AutoSize = true;
             this.paperRadioButtonTwo.Location = new System.Drawing.Point(39, 364);
             this.paperRadioButtonTwo.Name = "paperRadioButtonTwo";
-            this.paperRadioButtonTwo.Size = new System.Drawing.Size(125, 45);
+            this.paperRadioButtonTwo.Size = new System.Drawing.Size(145, 52);
             this.paperRadioButtonTwo.TabIndex = 5;
             this.paperRadioButtonTwo.TabStop = true;
             this.paperRadioButtonTwo.Text = "Paper";
@@ -171,7 +171,7 @@ namespace RPS_Game
             this.rockRadioButtonTwo.AutoSize = true;
             this.rockRadioButtonTwo.Location = new System.Drawing.Point(39, 305);
             this.rockRadioButtonTwo.Name = "rockRadioButtonTwo";
-            this.rockRadioButtonTwo.Size = new System.Drawing.Size(111, 45);
+            this.rockRadioButtonTwo.Size = new System.Drawing.Size(130, 52);
             this.rockRadioButtonTwo.TabIndex = 4;
             this.rockRadioButtonTwo.TabStop = true;
             this.rockRadioButtonTwo.Text = "Rock";
@@ -188,7 +188,7 @@ namespace RPS_Game
             // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 40F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 683);
             this.Controls.Add(this.groupBoxTwo);
