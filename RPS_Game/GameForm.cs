@@ -58,10 +58,12 @@ namespace RPS_Game
             else if (paperRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Paper;
+                pictureBox1.Image = Image.FromFile("Images/paper.jpg");
             }
             else if (scissorsRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Scissors;
+                pictureBox1.Image = Image.FromFile("Images/scissors.jpg");
             }
 
 
@@ -70,11 +72,20 @@ namespace RPS_Game
         private void SetPlayerTwoChoice(object sender, EventArgs e)
         {
             if (rockRadioButtonTwo.Checked)
+            {
                 controller.PlayerTwoChoice = GameChoices.Rock;
+                pictureBox2.Image = Image.FromFile("Images/stone.jpg"); 
+            }
             else if (paperRadioButtonTwo.Checked)
+            {
                 controller.PlayerTwoChoice = GameChoices.Paper;
+                pictureBox2.Image = Image.FromFile("Images/paper");
+            }
             else if (scissorsRadioButtonTwo.Checked)
+            {
                 controller.PlayerTwoChoice = GameChoices.Scissors;
+                pictureBox2.Image = Image.FromFile("Images/scissors");
+            }
         }
     }
 }

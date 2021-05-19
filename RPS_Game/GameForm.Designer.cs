@@ -36,11 +36,11 @@ namespace RPS_Game
             this.paperRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.groupBoxTwo = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.scissorsRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxTwo.SuspendLayout();
@@ -74,9 +74,11 @@ namespace RPS_Game
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(29, 70);
+            this.pictureBox1.Image = global::RPS_Game.Properties.Resources.Scissors;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(271, 229);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -130,6 +132,16 @@ namespace RPS_Game
             this.groupBoxTwo.TabStop = false;
             this.groupBoxTwo.Text = "NameTwo";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(78, 471);
+            this.button1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 64);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // scissorsRadioButtonTwo
             // 
             this.scissorsRadioButtonTwo.AutoSize = true;
@@ -173,16 +185,6 @@ namespace RPS_Game
             this.pictureBox2.Size = new System.Drawing.Size(271, 212);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(78, 471);
-            this.button1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(181, 64);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // GameForm
             // 
