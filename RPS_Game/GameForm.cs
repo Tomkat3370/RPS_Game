@@ -11,9 +11,9 @@ namespace RPS_Game
     public partial class GameForm : Form
     {
         private GameController controller;
-        private string rockFileName = "rock.jpg";
-        private string paperFileName = "paper.jpg";
-        private string scissorsFileName = "scissors.jpg";
+        private Bitmap stone = Properties.Resources.Stone;
+        private Bitmap paper = Properties.Resources.Paper;
+        private Bitmap scissors = Properties.Resources.Scissors;
 
         public GameForm(GameController controller)
         {
@@ -53,19 +53,16 @@ namespace RPS_Game
             if (rockRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Rock;
-                Bitmap stone = Properties.Resources.Stone;
                 pictureBox1.Image = stone;
             }
             else if (paperRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Paper;
-                Bitmap paper = Properties.Resources.Paper;
                 pictureBox1.Image = paper;
             }
             else if (scissorsRadioButtonOne.Checked)
             {
                 controller.PlayerOneChoice = GameChoices.Scissors;
-                Bitmap scissors = Properties.Resources.Scissors;
                 pictureBox1.Image = scissors;
             }
 
@@ -77,19 +74,16 @@ namespace RPS_Game
             if (rockRadioButtonTwo.Checked)
             {
                 controller.PlayerTwoChoice = GameChoices.Rock;
-                Bitmap stone = Properties.Resources.Stone;
                 pictureBox2.Image = stone;
             }
             else if (paperRadioButtonTwo.Checked)
             {
                 controller.PlayerTwoChoice = GameChoices.Paper;
-                Bitmap paper = Properties.Resources.Paper;
                 pictureBox2.Image = paper;
             }
             else if (scissorsRadioButtonTwo.Checked)
             {
                 controller.PlayerTwoChoice = GameChoices.Scissors;
-                Bitmap scissors = Properties.Resources.Scissors;
                 pictureBox2.Image = scissors;
             }
         }
