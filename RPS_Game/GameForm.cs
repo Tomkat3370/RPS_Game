@@ -36,9 +36,16 @@ namespace RPS_Game
 
         }
 
-        private void CloseForm(object sender, EventArgs e)
+        private void PlayChoiceOne(object sender, EventArgs e)
         {
-            Close();
+            if (controller.PlayerOneChoice != GameChoices.None)
+            {
+                if (controller.VersusComputer)
+                {
+                    controller.MakeComputerChoice();
+                    controller.CalculateResult();
+                }
+            }
         }
 
         private void SetPlayerOneChoice(object sender, EventArgs e)

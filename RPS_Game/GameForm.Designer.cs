@@ -29,7 +29,7 @@ namespace RPS_Game
         /// </summary>
         private void InitializeComponent()
         {
-            this.closeButton = new System.Windows.Forms.Button();
+            this.playButton = new System.Windows.Forms.Button();
             this.groupBoxOne = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.scissorsRadioButtonOne = new System.Windows.Forms.RadioButton();
@@ -40,27 +40,29 @@ namespace RPS_Game
             this.paperRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxTwo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // closeButton
+            // playButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(432, 535);
-            this.closeButton.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(181, 64);
-            this.closeButton.TabIndex = 1;
-            this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.CloseForm);
+            this.playButton.Location = new System.Drawing.Point(59, 476);
+            this.playButton.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(181, 64);
+            this.playButton.TabIndex = 1;
+            this.playButton.Text = "Play";
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.PlayChoiceOne);
             // 
             // groupBoxOne
             // 
             this.groupBoxOne.Controls.Add(this.pictureBox1);
             this.groupBoxOne.Controls.Add(this.scissorsRadioButtonOne);
+            this.groupBoxOne.Controls.Add(this.playButton);
             this.groupBoxOne.Controls.Add(this.paperRadioButtonOne);
             this.groupBoxOne.Controls.Add(this.rockRadioButtonOne);
             this.groupBoxOne.Location = new System.Drawing.Point(55, 55);
@@ -83,7 +85,7 @@ namespace RPS_Game
             this.scissorsRadioButtonOne.AutoSize = true;
             this.scissorsRadioButtonOne.Location = new System.Drawing.Point(29, 422);
             this.scissorsRadioButtonOne.Name = "scissorsRadioButtonOne";
-            this.scissorsRadioButtonOne.Size = new System.Drawing.Size(184, 52);
+            this.scissorsRadioButtonOne.Size = new System.Drawing.Size(157, 45);
             this.scissorsRadioButtonOne.TabIndex = 2;
             this.scissorsRadioButtonOne.TabStop = true;
             this.scissorsRadioButtonOne.Text = "Scissors";
@@ -95,7 +97,7 @@ namespace RPS_Game
             this.paperRadioButtonOne.AutoSize = true;
             this.paperRadioButtonOne.Location = new System.Drawing.Point(29, 364);
             this.paperRadioButtonOne.Name = "paperRadioButtonOne";
-            this.paperRadioButtonOne.Size = new System.Drawing.Size(145, 52);
+            this.paperRadioButtonOne.Size = new System.Drawing.Size(125, 45);
             this.paperRadioButtonOne.TabIndex = 1;
             this.paperRadioButtonOne.TabStop = true;
             this.paperRadioButtonOne.Text = "Paper";
@@ -107,7 +109,7 @@ namespace RPS_Game
             this.rockRadioButtonOne.AutoSize = true;
             this.rockRadioButtonOne.Location = new System.Drawing.Point(29, 305);
             this.rockRadioButtonOne.Name = "rockRadioButtonOne";
-            this.rockRadioButtonOne.Size = new System.Drawing.Size(130, 52);
+            this.rockRadioButtonOne.Size = new System.Drawing.Size(111, 45);
             this.rockRadioButtonOne.TabIndex = 0;
             this.rockRadioButtonOne.TabStop = true;
             this.rockRadioButtonOne.Text = "Rock";
@@ -116,6 +118,7 @@ namespace RPS_Game
             // 
             // groupBoxTwo
             // 
+            this.groupBoxTwo.Controls.Add(this.button1);
             this.groupBoxTwo.Controls.Add(this.scissorsRadioButtonTwo);
             this.groupBoxTwo.Controls.Add(this.paperRadioButtonTwo);
             this.groupBoxTwo.Controls.Add(this.rockRadioButtonTwo);
@@ -132,7 +135,7 @@ namespace RPS_Game
             this.scissorsRadioButtonTwo.AutoSize = true;
             this.scissorsRadioButtonTwo.Location = new System.Drawing.Point(39, 422);
             this.scissorsRadioButtonTwo.Name = "scissorsRadioButtonTwo";
-            this.scissorsRadioButtonTwo.Size = new System.Drawing.Size(184, 52);
+            this.scissorsRadioButtonTwo.Size = new System.Drawing.Size(157, 45);
             this.scissorsRadioButtonTwo.TabIndex = 6;
             this.scissorsRadioButtonTwo.TabStop = true;
             this.scissorsRadioButtonTwo.Text = "Scissors";
@@ -144,7 +147,7 @@ namespace RPS_Game
             this.paperRadioButtonTwo.AutoSize = true;
             this.paperRadioButtonTwo.Location = new System.Drawing.Point(39, 364);
             this.paperRadioButtonTwo.Name = "paperRadioButtonTwo";
-            this.paperRadioButtonTwo.Size = new System.Drawing.Size(145, 52);
+            this.paperRadioButtonTwo.Size = new System.Drawing.Size(125, 45);
             this.paperRadioButtonTwo.TabIndex = 5;
             this.paperRadioButtonTwo.TabStop = true;
             this.paperRadioButtonTwo.Text = "Paper";
@@ -156,7 +159,7 @@ namespace RPS_Game
             this.rockRadioButtonTwo.AutoSize = true;
             this.rockRadioButtonTwo.Location = new System.Drawing.Point(39, 305);
             this.rockRadioButtonTwo.Name = "rockRadioButtonTwo";
-            this.rockRadioButtonTwo.Size = new System.Drawing.Size(130, 52);
+            this.rockRadioButtonTwo.Size = new System.Drawing.Size(111, 45);
             this.rockRadioButtonTwo.TabIndex = 4;
             this.rockRadioButtonTwo.TabStop = true;
             this.rockRadioButtonTwo.Text = "Rock";
@@ -171,14 +174,23 @@ namespace RPS_Game
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(78, 471);
+            this.button1.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 64);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 683);
             this.Controls.Add(this.groupBoxTwo);
             this.Controls.Add(this.groupBoxOne);
-            this.Controls.Add(this.closeButton);
             this.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "GameForm";
             this.Text = "Game";
@@ -193,7 +205,7 @@ namespace RPS_Game
         }
 
         #endregion
-        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.GroupBox groupBoxOne;
         private System.Windows.Forms.GroupBox groupBoxTwo;
         private System.Windows.Forms.RadioButton scissorsRadioButtonOne;
@@ -204,5 +216,6 @@ namespace RPS_Game
         private System.Windows.Forms.RadioButton scissorsRadioButtonTwo;
         private System.Windows.Forms.RadioButton paperRadioButtonTwo;
         private System.Windows.Forms.RadioButton rockRadioButtonTwo;
+        private System.Windows.Forms.Button button1;
     }
 }
