@@ -51,11 +51,18 @@ namespace RPS_Game
         private void SetPlayerOneChoice(object sender, EventArgs e)
         {
             if (rockRadioButtonOne.Checked)
+            {
                 controller.PlayerOneChoice = GameChoices.Rock;
+                pictureBox1.Image = Image.FromFile("Images/Stone.jpg");
+            }
             else if (paperRadioButtonOne.Checked)
+            {
                 controller.PlayerOneChoice = GameChoices.Paper;
+            }
             else if (scissorsRadioButtonOne.Checked)
+            {
                 controller.PlayerOneChoice = GameChoices.Scissors;
+            }
 
 
         }

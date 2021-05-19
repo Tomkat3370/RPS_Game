@@ -6,9 +6,11 @@ namespace RPS_Game
 {
     public enum GameChoices
     {
+        None,
         Rock,
         Paper,
         Scissors
+
     }
 
     /// <summary>
