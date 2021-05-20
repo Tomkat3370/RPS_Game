@@ -107,6 +107,11 @@ namespace RPS_Game
             }
         }
 
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
         //Todo: Add "Display Winner" method
         //Todo: Add "MakeComputerChoice" random generator
         //Todo: Add "Exit Game" Method
