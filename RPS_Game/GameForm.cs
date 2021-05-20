@@ -107,10 +107,19 @@ namespace RPS_Game
             }
         }
 
-        private void GameForm_Load(object sender, EventArgs e)
+        private void DisplayWinner(object sender, EventArgs e)
         {
-
+            if(controller.EndRound=true && controller.EndGame = false)
+            {
+                winnerLabel.Text = $"Congratulations [PlayerName] You Win This Round";
+            }
+            else
+            {
+                winnerLabel.Text = $"Congratulations [PlayerName] You Win";
+            }
         }
+
+
 
         //Todo: Add "Display Winner" method
         //Todo: Add "MakeComputerChoice" random generator

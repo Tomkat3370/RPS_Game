@@ -30,17 +30,18 @@ namespace RPS_Game
         private void InitializeComponent()
         {
             this.groupBoxOne = new System.Windows.Forms.GroupBox();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.scissorsRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonOne = new System.Windows.Forms.RadioButton();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.groupBoxTwo = new System.Windows.Forms.GroupBox();
             this.scissorsRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.playButton = new System.Windows.Forms.Button();
+            this.winnerLabel = new System.Windows.Forms.Label();
             this.groupBoxOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxTwo.SuspendLayout();
@@ -59,15 +60,6 @@ namespace RPS_Game
             this.groupBoxOne.TabIndex = 4;
             this.groupBoxOne.TabStop = false;
             this.groupBoxOne.Text = "NameOne";
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.BackColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(222, 9);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 41);
-            this.errorLabel.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -111,6 +103,15 @@ namespace RPS_Game
             this.rockRadioButtonOne.Text = "Rock";
             this.rockRadioButtonOne.UseVisualStyleBackColor = true;
             this.rockRadioButtonOne.CheckedChanged += new System.EventHandler(this.SetPlayerOneChoice);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.BackColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(222, 9);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 41);
+            this.errorLabel.TabIndex = 7;
             // 
             // groupBoxTwo
             // 
@@ -181,11 +182,23 @@ namespace RPS_Game
             this.playButton.UseVisualStyleBackColor = true;
             this.playButton.Click += new System.EventHandler(this.SelectPlayButton);
             // 
+            // winnerLabel
+            // 
+            this.winnerLabel.AutoSize = true;
+            this.winnerLabel.BackColor = System.Drawing.Color.LawnGreen;
+            this.winnerLabel.Location = new System.Drawing.Point(502, 102);
+            this.winnerLabel.Name = "winnerLabel";
+            this.winnerLabel.Size = new System.Drawing.Size(89, 41);
+            this.winnerLabel.TabIndex = 8;
+            this.winnerLabel.Text = "hello";
+            this.winnerLabel.Click += new System.EventHandler(this.DisplayWinner);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(18F, 40F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 683);
+            this.Controls.Add(this.winnerLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.groupBoxTwo);
@@ -217,5 +230,6 @@ namespace RPS_Game
         private System.Windows.Forms.RadioButton rockRadioButtonTwo;
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label winnerLabel;
     }
 }
