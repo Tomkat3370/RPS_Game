@@ -29,10 +29,18 @@ namespace RPS_Game
         public int CurrentRound { get; set; }
 
         public bool VersusComputer { get; set; }
+        public string Computer;
+        public string[] computer = { "Rock", "Paper", "Scissors" };
+        public Random random = new Random();
+        public int RandomType;
+        
+
 
         public GameChoices PlayerOneChoice { get; set; }
         public GameChoices PlayerTwoChoice { get; set; }
-        
+        public bool EndRound { get; set; }
+        public bool EndGame { get;  set; }
+
         /// <summary>
         /// StartGame asks for the players name and how many
         /// rounds of rock, paper, scissors they want to play.

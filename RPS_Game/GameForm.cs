@@ -87,6 +87,8 @@ namespace RPS_Game
 
         }
 
+
+
         private void SelectPlayButton(object sender, EventArgs e)
         {
             if (controller.PlayerOneChoice != GameChoices.None
@@ -109,19 +111,19 @@ namespace RPS_Game
 
         private void DisplayWinner(object sender, EventArgs e)
         {
-            if(controller.EndRound=true && controller.EndGame = false)
+            if (controller.EndGame == true)
             {
-                winnerLabel.Text = $"Congratulations [PlayerName] You Win This Round";
+                winnerLabel.Text = $"Congratulations [PlayerName] You Win";
             }
             else
             {
-                winnerLabel.Text = $"Congratulations [PlayerName] You Win";
+                winnerLabel.Text = $"Congratulations [PlayerName] You Win This Round";
             }
         }
 
 
 
-        //Todo: Add "Display Winner" method
+        
         //Todo: Add "MakeComputerChoice" random generator
         //Todo: Add "Exit Game" Method
         //Todo: Add "End Round" and "End Game" methods
