@@ -109,33 +109,58 @@ namespace RPS_Game
             }
         }
 
-        private void DisplayWinner(object sender, EventArgs e)
+        private void DisplayWinner()
         {
-            if (controller.EndGame == true)
+            if (controller.WinnersName == "Computer")
             {
-                winnerLabel.Text = $"Congratulations [PlayerName] You Win";
+                winnerLabel.Text = "The Computer Has Won!";
+            }
+            else if (controller.WinnersName == controller.PlayerOneName)
+            {
+                winnerLabel.Text = $"Congratulations" +
+                    $"{controller.PlayerOneName} You Win!";
+            }
+            else if (controller.WinnersName == controller.PlayerTwoName)
+            {
+                winnerLabel.Text = $"Congratulations " +
+                    $"{controller.PlayerTwoName} You Win!";
             }
             else
-            {
-                winnerLabel.Text = $"Congratulations [PlayerName] You Win This Round";
-            }
+            winnerLabel.Text = "Draw";
         }
 
         private void SetComputerChoice(object sender, EventArgs e)
         {
-            if(controller.VersusComputer == true)
+            if (controller.VersusComputer == true)
             {
+                if (controller.PlayerOneChoice == GameChoices.Rock)
+                {
+                    controller.RandomType = controller.random.Next(0, 3);
+                    controller.Computer = controller.computer[controller.RandomType];
+                    DisplayWinner();
+                }
+                else if (controller.PlayerOneChoice == GameChoices.Paper)
+                {
+                    controller.RandomType = controller.random.Next(0, 3);
+                    controller.Computer = controller.computer[controller.RandomType];
+                    DisplayWinner();
+                }
+                else if (controller.PlayerOneChoice == GameChoices.Scissors)
+                {
+                    controller.RandomType = controller.random.Next(0, 3);
+                    controller.Computer = controller.computer[controller.RandomType];
+                    DisplayWinner();
+                }
 
             }
+
+
+
+
+            //Todo: Add "MakeComputerChoice" random generator
+            //Todo: Add "Exit Game" Method
+            //Todo: Add "End Round" and "End Game" methods
+            //Todo: Add round number and current score to GameForm
         }
-
-
-
-
-        //Todo: Add "MakeComputerChoice" random generator
-        //Todo: Add "Exit Game" Method
-        //Todo: Add "End Round" and "End Game" methods
-        //Todo: Add round number and current score to GameForm
-
     }
 }

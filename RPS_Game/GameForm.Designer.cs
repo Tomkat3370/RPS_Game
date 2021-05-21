@@ -188,8 +188,7 @@ namespace RPS_Game
             this.winnerLabel.Size = new System.Drawing.Size(103, 48);
             this.winnerLabel.TabIndex = 8;
             this.winnerLabel.Text = "hello";
-            this.winnerLabel.Click += new System.EventHandler(this.DisplayWinner);
-            // 
+             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
