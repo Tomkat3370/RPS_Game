@@ -11,9 +11,9 @@ namespace RPS_Game
     public partial class GameForm : Form
     {
         private GameController controller;
-        private Bitmap stone = Properties.Resources.Stone;
-        private Bitmap paper = Properties.Resources.Paper;
-        private Bitmap scissors = Properties.Resources.Scissors;
+        private static Bitmap stone = Properties.Resources.Stone;
+        private static Bitmap paper = Properties.Resources.Paper;
+        private static Bitmap scissors = Properties.Resources.Scissors;
 
         public GameForm(GameController controller)
         {
@@ -121,9 +121,17 @@ namespace RPS_Game
             }
         }
 
+        private void SetComputerChoice(object sender, EventArgs e)
+        {
+            if(controller.VersusComputer == true)
+            {
+
+            }
+        }
 
 
-        
+
+
         //Todo: Add "MakeComputerChoice" random generator
         //Todo: Add "Exit Game" Method
         //Todo: Add "End Round" and "End Game" methods
