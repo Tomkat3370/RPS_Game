@@ -77,8 +77,6 @@ namespace RPS_Game
            if(PlayerOneChoice == PlayerTwoChoice)
             {
                 WinnersName = "None";
-                PlayerOneScore++;
-                PlayerTwoScore++;
             }
            else
             {
@@ -90,6 +88,30 @@ namespace RPS_Game
                 }
                 else if(PlayerOneChoice == GameChoices.Rock &&
                     PlayerTwoChoice == GameChoices.Scissors)
+                {
+                    WinnersName = PlayerOneName;
+                    PlayerOneScore++;
+                }
+                else if(PlayerOneChoice == GameChoices.Paper &&
+                    PlayerTwoChoice == GameChoices.Rock)
+                {
+                    WinnersName = PlayerOneName;
+                    PlayerOneScore++;
+                }
+                else if ( PlayerOneChoice == GameChoices.Paper &&
+                    PlayerTwoChoice == GameChoices.Scissors)
+                {
+                    WinnersName = PlayerTwoName;
+                    PlayerTwoScore++;
+                }
+                else if(PlayerOneChoice == GameChoices.Scissors &&
+                    PlayerTwoChoice == GameChoices.Rock)
+                {
+                    WinnersName = PlayerTwoName;
+                    PlayerTwoScore++;
+                }
+                else if(PlayerOneChoice == GameChoices.Scissors &&
+                    PlayerTwoChoice == GameChoices.Paper)
                 {
                     WinnersName = PlayerOneName;
                     PlayerOneScore++;
