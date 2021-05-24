@@ -29,17 +29,14 @@ namespace RPS_Game
         public int CurrentRound { get; set; }
 
         public bool VersusComputer { get; set; }
-        public string Computer;
-        public string[] computer = { "Rock", "Paper", "Scissors" };
         public Random random = new Random();
-        public int RandomType;
-        
-
+        private int choiceIndex;
 
         public GameChoices PlayerOneChoice { get; set; }
         public GameChoices PlayerTwoChoice { get; set; }
         public bool EndRound { get; set; }
-        public bool EndGame { get;  set; }
+        public bool EndGame { get; set; }
+        private Random generator = new Random();
 
         /// <summary>
         /// StartGame asks for the players name and how many
@@ -47,7 +44,12 @@ namespace RPS_Game
         /// </summary>
         public void StartGame()
         {
-            
+
+        }
+
+        public void DisplayCurrentRound()
+        {
+
         }
 
         public void MakeChoice()
@@ -57,12 +59,42 @@ namespace RPS_Game
 
         public void MakeComputerChoice()
         {
-
+            if (VersusComputer == true)
+            {
+                    choiceIndex = generator.Next(1, 4);
+                switch(choiceIndex)
+                {
+                    case 1: PlayerTwoChoice = GameChoices.Rock; break;
+                    case 2: PlayerTwoChoice = GameChoices.Paper; break;
+                    case 3: PlayerTwoChoice = GameChoices.Scissors; break;
+                    default: PlayerTwoChoice = GameChoices.None; break;
+                }
+                    CalculateResult();
+            }
         }
-
         public void CalculateResult()
         {
-
+           if(PlayerOneChoice == PlayerTwoChoice)
+            {
+                WinnersName = "None";
+                PlayerOneScore++;
+                PlayerTwoScore++;
+            }
+           else
+            {
+                if(PlayerOneChoice == GameChoices.Rock &&
+                    PlayerTwoChoice == GameChoices.Paper)
+                {
+                    WinnersName = PlayerTwoName;
+                    PlayerTwoScore++;
+                }
+                else if(PlayerOneChoice == GameChoices.Rock &&
+                    PlayerTwoChoice == GameChoices.Scissors)
+                {
+                    WinnersName = PlayerOneName;
+                    PlayerOneScore++;
+                }
+            }
         }
     }
 }

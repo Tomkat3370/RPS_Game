@@ -15,6 +15,7 @@ namespace RPS_Game
         private static Bitmap paper = Properties.Resources.Paper;
         private static Bitmap scissors = Properties.Resources.Scissors;
 
+
         public GameForm(GameController controller)
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace RPS_Game
                 paperRadioButtonTwo.Enabled = false;
                 scissorsRadioButtonTwo.Enabled = false;
             }
+
+
         }
 
         public void RunGame()
@@ -95,7 +98,9 @@ namespace RPS_Game
                 && controller.VersusComputer == true)
             {
                 controller.MakeComputerChoice();
-                controller.CalculateResult();
+                winnerLabel.Text = controller.WinnersName;
+                scoreOneLabel.Text = controller.PlayerOneScore.ToString();
+                scoreTwoLabel.Text = controller.PlayerTwoScore.ToString();
             }
             else if (controller.PlayerOneChoice != GameChoices.None
                 && controller.PlayerTwoChoice != GameChoices.None)
@@ -126,41 +131,20 @@ namespace RPS_Game
                     $"{controller.PlayerTwoName} You Win!";
             }
             else
-            winnerLabel.Text = "Draw";
+                winnerLabel.Text = "Draw";
         }
 
         private void SetComputerChoice(object sender, EventArgs e)
         {
-            if (controller.VersusComputer == true)
-            {
-                if (controller.PlayerOneChoice == GameChoices.Rock)
-                {
-                    controller.RandomType = controller.random.Next(0, 3);
-                    controller.Computer = controller.computer[controller.RandomType];
-                    DisplayWinner();
-                }
-                else if (controller.PlayerOneChoice == GameChoices.Paper)
-                {
-                    controller.RandomType = controller.random.Next(0, 3);
-                    controller.Computer = controller.computer[controller.RandomType];
-                    DisplayWinner();
-                }
-                else if (controller.PlayerOneChoice == GameChoices.Scissors)
-                {
-                    controller.RandomType = controller.random.Next(0, 3);
-                    controller.Computer = controller.computer[controller.RandomType];
-                    DisplayWinner();
-                }
-
-            }
 
 
-
-
-            //Todo: Add "MakeComputerChoice" random generator
-            //Todo: Add "Exit Game" Method
-            //Todo: Add "End Round" and "End Game" methods
-            //Todo: Add round number and current score to GameForm
         }
+
+
+        //Todo: Add "MakeComputerChoice" random generator
+        //Todo: Add "Exit Game" Method
+        //Todo: Add "End Round" and "End Game" methods
+        //Todo: Add round number and current score to GameForm
     }
+
 }

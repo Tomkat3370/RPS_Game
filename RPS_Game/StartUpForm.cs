@@ -66,6 +66,11 @@ namespace RPS_Game
            
         }
 
+        public void CurrentRound()
+        {
+
+        }
+
 
         
     }
