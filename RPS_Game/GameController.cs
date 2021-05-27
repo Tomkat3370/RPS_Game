@@ -22,7 +22,6 @@ namespace RPS_Game
     {
         public string PlayerOneName { get; set; }
         public string PlayerTwoName { get; set; }
-        public int Round { get; set; }
         public int PlayerOneScore { get; set; }
         public int PlayerTwoScore { get; set; }
         public string WinnersName { get; set; }

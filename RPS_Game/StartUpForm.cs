@@ -53,10 +53,10 @@ namespace RPS_Game
                 }
                 else gameController.VersusComputer = false;
 
-                gameController.Round = (int)roundsNumericUpDown.Value;
+                gameController.LastRound = (int)roundsNumericUpDown.Value;
 
-                gameForm = new GameForm(gameController);
-                gameForm.SetRounds(gameController.Round);
+                gameForm = new GameForm(this,gameController);
+                gameForm.SetRounds(gameController.LastRound);
                 gameForm.Show();
                 this.Hide();
             }

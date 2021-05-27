@@ -17,8 +17,10 @@ namespace RPS_Game
         private static Bitmap paper = Properties.Resources.Paper;
         private static Bitmap scissors = Properties.Resources.Scissors;
 
+        private StartUpForm startUpForm;
 
-        public GameForm(GameController controller)
+
+        public GameForm(StartUpForm startUpForm, GameController controller)
         {
             InitializeComponent();
 
@@ -32,6 +34,8 @@ namespace RPS_Game
                 paperRadioButtonTwo.Enabled = false;
                 scissorsRadioButtonTwo.Enabled = false;
             }
+
+            this.startUpForm = startUpForm;
 
 
         }
@@ -135,11 +139,13 @@ namespace RPS_Game
                 clearButton.Enabled = true;
             }
 
-            //hi
+          
         }
 
         private void DisplayWinner()
         {
+            controller.EndGame();
+
             if (controller.WinnersName == "Computer")
             {
                 winnerLabel.Text = "The Computer Has Won!";
@@ -156,6 +162,11 @@ namespace RPS_Game
             }
             else
                 winnerLabel.Text = "Draw";
+
+            restartButton.Visible = true;
+            playButton.Enabled = false;
+            clearButton.Enabled = false;
+        
         }
 
         private void EnableChoices()
@@ -187,10 +198,12 @@ namespace RPS_Game
 
         }
 
-        //Todo: Add "MakeComputerChoice" random generator
-        //Todo: Add "Exit Game" Method
-        //Todo: Add "End Round" and "End Game" methods
-        //Todo: Add round number and current score to GameForm
+        private void RestartGame(object sender, EventArgs e)
+        {
+            startUpForm.Show();
+            this.Close();
+        }
+
     }
 
 }

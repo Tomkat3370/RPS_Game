@@ -48,6 +48,7 @@ namespace RPS_Game
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.restartButton = new System.Windows.Forms.Button();
             this.groupBoxOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxTwo.SuspendLayout();
@@ -251,11 +252,24 @@ namespace RPS_Game
             this.progressBar1.Size = new System.Drawing.Size(150, 34);
             this.progressBar1.TabIndex = 13;
             // 
+            // restartButton
+            // 
+            this.restartButton.Location = new System.Drawing.Point(772, 605);
+            this.restartButton.Name = "restartButton";
+            this.restartButton.Size = new System.Drawing.Size(215, 57);
+            this.restartButton.TabIndex = 14;
+            this.restartButton.Text = "Restart";
+            this.restartButton.UseCompatibleTextRendering = true;
+            this.restartButton.UseVisualStyleBackColor = true;
+            this.restartButton.Visible = false;
+            this.restartButton.Click += new System.EventHandler(this.RestartGame);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 683);
+            this.Controls.Add(this.restartButton);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -299,5 +313,6 @@ namespace RPS_Game
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button restartButton;
     }
 }
