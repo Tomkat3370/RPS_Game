@@ -22,7 +22,7 @@ namespace RPS_Game
     {
         public string PlayerOneName { get; set; }
         public string PlayerTwoName { get; set; }
-        public int Rounds { get; set; }
+        public int Round { get; set; }
         public int PlayerOneScore { get; set; }
         public int PlayerTwoScore { get; set; }
         public string WinnersName { get; set; }
@@ -36,6 +36,8 @@ namespace RPS_Game
         public GameChoices PlayerTwoChoice { get; set; }
         public bool EndRound { get; set; }
         public bool EndGame { get; set; }
+        public int LastRound { get; set; }
+
         private Random generator = new Random();
 
         /// <summary>
@@ -61,61 +63,63 @@ namespace RPS_Game
         {
             if (VersusComputer == true)
             {
-                    choiceIndex = generator.Next(1, 4);
-                switch(choiceIndex)
+                choiceIndex = generator.Next(1, 4);
+                switch (choiceIndex)
                 {
                     case 1: PlayerTwoChoice = GameChoices.Rock; break;
                     case 2: PlayerTwoChoice = GameChoices.Paper; break;
                     case 3: PlayerTwoChoice = GameChoices.Scissors; break;
                     default: PlayerTwoChoice = GameChoices.None; break;
                 }
-                    CalculateResult();
+                CalculateResult();
             }
         }
         public void CalculateResult()
         {
-           if(PlayerOneChoice == PlayerTwoChoice)
+            if (PlayerOneChoice == PlayerTwoChoice)
             {
                 WinnersName = "None";
             }
-           else
+            else
             {
-                if(PlayerOneChoice == GameChoices.Rock &&
-                    PlayerTwoChoice == GameChoices.Paper)
+                if ((PlayerOneChoice == GameChoices.Rock &&
+                    PlayerTwoChoice == GameChoices.Paper) ||
+                    (PlayerOneChoice == GameChoices.Paper &&
+                    PlayerTwoChoice == GameChoices.Scissors) ||
+                    (PlayerOneChoice == GameChoices.Scissors &&
+                    PlayerTwoChoice == GameChoices.Rock))
                 {
                     WinnersName = PlayerTwoName;
                     PlayerTwoScore++;
                 }
-                else if(PlayerOneChoice == GameChoices.Rock &&
-                    PlayerTwoChoice == GameChoices.Scissors)
+                else if ((PlayerOneChoice == GameChoices.Rock &&
+                    PlayerTwoChoice == GameChoices.Scissors) ||
+                    (PlayerOneChoice == GameChoices.Paper &&
+                    PlayerTwoChoice == GameChoices.Rock) ||
+                    (PlayerOneChoice == GameChoices.Scissors &&
+                    PlayerTwoChoice == GameChoices.Paper))
                 {
                     WinnersName = PlayerOneName;
                     PlayerOneScore++;
                 }
-                else if(PlayerOneChoice == GameChoices.Paper &&
-                    PlayerTwoChoice == GameChoices.Rock)
-                {
-                    WinnersName = PlayerOneName;
-                    PlayerOneScore++;
-                }
-                else if ( PlayerOneChoice == GameChoices.Paper &&
-                    PlayerTwoChoice == GameChoices.Scissors)
-                {
-                    WinnersName = PlayerTwoName;
-                    PlayerTwoScore++;
-                }
-                else if(PlayerOneChoice == GameChoices.Scissors &&
-                    PlayerTwoChoice == GameChoices.Rock)
-                {
-                    WinnersName = PlayerTwoName;
-                    PlayerTwoScore++;
-                }
-                else if(PlayerOneChoice == GameChoices.Scissors &&
-                    PlayerTwoChoice == GameChoices.Paper)
-                {
-                    WinnersName = PlayerOneName;
-                    PlayerOneScore++;
-                }
+                if (CurrentRound < LastRound) Round++;
+                else EndGame();
+            }
+        }
+
+        public void EndGame()
+        {
+            if(PlayerTwoScore > PlayerOneScore)
+            {
+                WinnersName = PlayerTwoName;
+            }
+            else if(PlayerOneScore > PlayerTwoScore)
+            {
+                WinnersName = PlayerOneName;
+            }
+            else
+            {
+                WinnersName = "Draw!!";
             }
         }
     }
