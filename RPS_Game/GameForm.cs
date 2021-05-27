@@ -125,8 +125,17 @@ namespace RPS_Game
 
             progressBar1.Value = controller.CurrentRound * 10;
 
-            playButton.Enabled = false;
-            clearButton.Enabled = true;
+            if(controller.CurrentRound == controller.LastRound)
+            {
+                DisplayWinner();
+            }
+            else
+            {
+                playButton.Enabled = false;
+                clearButton.Enabled = true;
+            }
+
+            
         }
 
         private void DisplayWinner()

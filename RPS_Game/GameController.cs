@@ -101,8 +101,7 @@ namespace RPS_Game
                     WinnersName = PlayerOneName;
                     PlayerOneScore++;
                 }
-                if (CurrentRound < LastRound) Round++;
-                else EndGame();
+                
             }
         }
 
