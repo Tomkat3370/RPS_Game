@@ -34,8 +34,7 @@ namespace RPS_Game
 
         public GameChoices PlayerOneChoice { get; set; }
         public GameChoices PlayerTwoChoice { get; set; }
-        public bool EndRound { get; set; }
-        public bool EndGame { get; set; }
+        public bool GameEnded { get; set; }
         public int LastRound { get; set; }
 
         private Random generator = new Random();

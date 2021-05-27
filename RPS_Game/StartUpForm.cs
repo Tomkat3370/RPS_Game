@@ -56,6 +56,7 @@ namespace RPS_Game
                 gameController.Round = (int)roundsNumericUpDown.Value;
 
                 gameForm = new GameForm(gameController);
+                gameForm.SetRounds(gameController.Round);
                 gameForm.Show();
                 this.Hide();
             }

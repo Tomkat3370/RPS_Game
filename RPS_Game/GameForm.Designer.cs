@@ -29,44 +29,39 @@ namespace RPS_Game
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ProgressBar progressBar;
             this.groupBoxOne = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.scoreOneLabel = new System.Windows.Forms.Label();
             this.scissorsRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonOne = new System.Windows.Forms.RadioButton();
             this.errorLabel = new System.Windows.Forms.Label();
             this.groupBoxTwo = new System.Windows.Forms.GroupBox();
+            this.scoreTwoLabel = new System.Windows.Forms.Label();
             this.scissorsRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.paperRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.rockRadioButtonTwo = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.playButton = new System.Windows.Forms.Button();
             this.winnerLabel = new System.Windows.Forms.Label();
-            this.scoreOneLabel = new System.Windows.Forms.Label();
-            this.scoreTwoLabel = new System.Windows.Forms.Label();
-            progressBar = new System.Windows.Forms.ProgressBar();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBoxOne.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxTwo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // progressBar
-            // 
-            progressBar.Location = new System.Drawing.Point(434, 107);
-            progressBar.Name = "progressBar";
-            progressBar.Size = new System.Drawing.Size(150, 34);
-            progressBar.TabIndex = 9;
-            // 
             // groupBoxOne
             // 
-            this.groupBoxOne.Controls.Add(this.scoreOneLabel);
             this.groupBoxOne.Controls.Add(this.pictureBox1);
+            this.groupBoxOne.Controls.Add(this.scoreOneLabel);
             this.groupBoxOne.Controls.Add(this.scissorsRadioButtonOne);
             this.groupBoxOne.Controls.Add(this.paperRadioButtonOne);
             this.groupBoxOne.Controls.Add(this.rockRadioButtonOne);
-            this.groupBoxOne.Location = new System.Drawing.Point(43, 60);
+            this.groupBoxOne.Location = new System.Drawing.Point(24, 69);
             this.groupBoxOne.Name = "groupBoxOne";
             this.groupBoxOne.Size = new System.Drawing.Size(348, 544);
             this.groupBoxOne.TabIndex = 4;
@@ -79,8 +74,17 @@ namespace RPS_Game
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(271, 229);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // scoreOneLabel
+            // 
+            this.scoreOneLabel.AutoSize = true;
+            this.scoreOneLabel.Location = new System.Drawing.Point(202, 0);
+            this.scoreOneLabel.Name = "scoreOneLabel";
+            this.scoreOneLabel.Size = new System.Drawing.Size(42, 48);
+            this.scoreOneLabel.TabIndex = 4;
+            this.scoreOneLabel.Text = "0";
             // 
             // scissorsRadioButtonOne
             // 
@@ -137,7 +141,15 @@ namespace RPS_Game
             this.groupBoxTwo.TabIndex = 5;
             this.groupBoxTwo.TabStop = false;
             this.groupBoxTwo.Text = "NameTwo";
-            this.groupBoxTwo.Enter += new System.EventHandler(this.SetComputerChoice);
+            // 
+            // scoreTwoLabel
+            // 
+            this.scoreTwoLabel.AutoSize = true;
+            this.scoreTwoLabel.Location = new System.Drawing.Point(198, 0);
+            this.scoreTwoLabel.Name = "scoreTwoLabel";
+            this.scoreTwoLabel.Size = new System.Drawing.Size(42, 48);
+            this.scoreTwoLabel.TabIndex = 5;
+            this.scoreTwoLabel.Text = "0";
             // 
             // scissorsRadioButtonTwo
             // 
@@ -196,35 +208,58 @@ namespace RPS_Game
             // 
             this.winnerLabel.AutoSize = true;
             this.winnerLabel.BackColor = System.Drawing.Color.LawnGreen;
-            this.winnerLabel.Location = new System.Drawing.Point(468, 107);
+            this.winnerLabel.Location = new System.Drawing.Point(458, 289);
             this.winnerLabel.Name = "winnerLabel";
-            this.winnerLabel.Size = new System.Drawing.Size(0, 48);
+            this.winnerLabel.Size = new System.Drawing.Size(112, 48);
             this.winnerLabel.TabIndex = 8;
+            this.winnerLabel.Text = "None";
+            this.winnerLabel.Click += new System.EventHandler(this.winnerLabel_Click);
             // 
-            // scoreOneLabel
+            // clearButton
             // 
-            this.scoreOneLabel.AutoSize = true;
-            this.scoreOneLabel.Location = new System.Drawing.Point(202, 0);
-            this.scoreOneLabel.Name = "scoreOneLabel";
-            this.scoreOneLabel.Size = new System.Drawing.Size(42, 48);
-            this.scoreOneLabel.TabIndex = 4;
-            this.scoreOneLabel.Text = "0";
+            this.clearButton.Enabled = false;
+            this.clearButton.Location = new System.Drawing.Point(434, 466);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(173, 60);
+            this.clearButton.TabIndex = 10;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearChoices);
             // 
-            // scoreTwoLabel
+            // label1
             // 
-            this.scoreTwoLabel.AutoSize = true;
-            this.scoreTwoLabel.Location = new System.Drawing.Point(198, 0);
-            this.scoreTwoLabel.Name = "scoreTwoLabel";
-            this.scoreTwoLabel.Size = new System.Drawing.Size(42, 48);
-            this.scoreTwoLabel.TabIndex = 5;
-            this.scoreTwoLabel.Text = "0";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(445, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(144, 48);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Winner";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(369, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(286, 48);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Round Number";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(439, 185);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(150, 34);
+            this.progressBar1.TabIndex = 13;
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(22F, 48F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 683);
-            this.Controls.Add(progressBar);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.clearButton);
             this.Controls.Add(this.winnerLabel);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.playButton);
@@ -250,7 +285,6 @@ namespace RPS_Game
         private System.Windows.Forms.RadioButton scissorsRadioButtonOne;
         private System.Windows.Forms.RadioButton paperRadioButtonOne;
         private System.Windows.Forms.RadioButton rockRadioButtonOne;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton scissorsRadioButtonTwo;
         private System.Windows.Forms.RadioButton paperRadioButtonTwo;
@@ -260,5 +294,10 @@ namespace RPS_Game
         private System.Windows.Forms.Label winnerLabel;
         private System.Windows.Forms.Label scoreOneLabel;
         private System.Windows.Forms.Label scoreTwoLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
